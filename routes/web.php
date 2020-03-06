@@ -25,6 +25,8 @@ Route::post('ajx', 'senData@processData');
 
 Route::get('/consulta','senData@consulta');
 
+Route::get('/urisegment/{id?}','uriReception@recept');
+
 //  Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
 
 //Route::redirect('/here', '/there');
