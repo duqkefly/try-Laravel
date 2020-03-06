@@ -9,20 +9,15 @@ class senData extends Controller
 {
     function processData(Request $request){        
         /* $method = $request->method();
-        print_r($method); */
-        $email = $request->input("email");
+        print_r($method); */      
         
-        
-        $users = DB::select('select * from users where email = ?', [$email]);
-        
-        /* if($request->has('email')){
+        if($request->has('email')){
             $email = $request->input("email");
-            echo "email:: ".$email."\n";
-            print_r($users);
+            $users = DB::select('select * from users where email = ?', [$email]);
+            return $users;
         }else{
             return "No email sended";
-        } */
-        return $users;
+        }
     }
     function consulta(){
         $users = DB::select('select * from users where id = ?', [1]);
